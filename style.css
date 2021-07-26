@@ -79,3 +79,14 @@ body{
 .nav-links ul li a:hover {
   color: #37baee;
 }
+@media screen and (max-width: 500px){
+  .container{
+    top: 30%;
+  }
+  .container h2{
+    font-size: .8rem;
+  }
+  .container .btn{
+    font-size: .6rem;
+  }
+}
