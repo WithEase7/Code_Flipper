@@ -6,9 +6,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #a5d3ba;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(250, 250, 250);
+  box-shadow: -.5px .5px 10px 3px rgba(0, 0, 0, 0.479);
+}
+.nav-center {
+  margin: 1rem;
+  color: #37baee;
+  letter-spacing: 0.1rem;
+  font-family: 'Roboto Slab', serif;
+}
+.nav-links ul {
+  list-style-type: none;
+  display: flex;
+}
+.nav-links ul li {
+  margin: 1rem;
+}
+.nav-links ul li a {
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  color: black;
+  font-family: 'Roboto Slab', serif;
+}
+.main {
+  height: 100vh;
+  position: relative;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  text-align: center;
+}
+.container h2 {
+  background-color: rgba(0, 0, 0, 0.87);
+  color: white;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  font-family: 'Roboto Slab', serif;
+}
+.color {
+  color: #37baee;
+  font-size: inherit;
+  text-transform: capitalize;
+}
+.container .btn {
+  background-color: inherit;
+  border: 2px solid rgba(0, 0, 0, 0.856);
+  border-radius: 0.5rem;
+  outline: none;
+  text-align: center;
+  padding: 0.6rem 0.8rem;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  margin-top: 3rem;
+  font-family: 'Roboto Slab', serif;
+  transition: .6s ease-out;
+}
+/* =============================================hover styles*/
+.container .btn:hover {
+  background-color: rgba(0, 0, 0, 0.863);
+  color: white;
+  cursor: pointer;
+}
+.nav-links ul li a:hover {
+  color: #37baee;
+} 
+</style>
 </head>
 
 <body>
@@ -33,7 +116,25 @@
             <button class="btn btn-hero" id="btn">CLICK ME</button>
         </div>
     </div>
-    <script src = 'script.js'></script>
+    <script>
+    const colors = [
+  'red',
+  'green',
+  'blue',
+  'pink',
+  'yellow',
+  'purple',
+  'lightblue',
+];
+const btn = document.getElementById('btn');
+const color = document.querySelector('.color');
+
+btn.addEventListener('click', () => {
+  const randomNumber = Math.floor(Math.random() * colors.length);
+  document.body.style.backgroundColor = colors[randomNumber];
+  color.textContent = colors[randomNumber];
+});
+    </script>
 </body>
 
 </html>
